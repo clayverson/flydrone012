@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Completo: Nova Legislação de Drones DECEA 2023</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Aplicando a fonte Inter como padrão */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Classe para forçar a proporção de vídeo 16:9 */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-900 text-slate-200 antialiased">
+
+  <!-- ===== Header (Menu de Navegação) ===== -->
+  <header class="sticky top-0 z-50 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#" class="text-2xl font-bold text-white">
+          Drone<span class="text-blue-400">Experts</span>
+        </a>
+        <nav class="hidden md:flex md:space-x-6 lg:space-x-8 text-sm lg:text-base">
+          <a href="#introducao" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">Início</a>
+          <a href="#triade" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">A Tríade</a>
+          <a href="#ica100-40" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">ICA 100-40</a>
+          <a href="#mca56-2" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">MCA 56-2</a>
+          <a href="#riscos" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">Riscos</a>
+          <a href="#galeria" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">Galeria</a>
+          <a href="#links" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">Links</a>
+          <a href="#conclusao" class="font-medium text-slate-300 hover:text-blue-400 transition-colors">Conclusão</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== 1. Boas-Vindas (Slide de Abertura) ===== -->
+    <section id="introducao" class="relative pt-20 pb-24 md:pt-32 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800/60 min-h-screen flex items-center">
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+            Curso Completo: <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-300">Nova Legislação de Drones</span>
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
+            Uma análise detalhada das portarias <strong class="text-white">DECEA Nº 928/DNOR8</strong> e <strong class="text-white">Nº 930/DNOR8</strong> (em vigor desde 03/07/2023) e o impacto nas suas operações.
+          </p>
+      </div>
+    </section>
+
+    <!-- ===== 2. A Tríade da Regulação (Detalhado) ===== -->
+    <section id="triade" class="py-20 bg-slate-900 min-h-screen flex items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-blue-400 font-semibold uppercase tracking-wider">Módulo 1</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-white">Os 3 Pilares da Regulação no Brasil</h2>
+          <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
+            Para voar 100% legalizado, você deve obedecer a TRÊS órgãos simultaneamente. Um não substitui o outro.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl text-center transition-all duration-300 hover:shadow-lg hover:border-blue-500">
+            <img src="https://placehold.co/100x100/1e293b/94a3b8?text=ANATEL" class="mx-auto rounded-full mb-4" alt="[Logo da ANATEL]">
+            <h3 class="mt-4 text-2xl font-bold text-white">1. ANATEL</h3>
+            <p class="mt-2 text-slate-300 text-left space-y-2">
+              <strong class="text-white">Função:</strong> Fiscaliza as RÁDIOFREQUÊNCIAS.
+              <br>
+              <strong class="text-white">O Quê:</strong> Homologação do Equipamento (drone e rádio controle).
+              <br>
+              <strong class="text-white">Por Quê:</strong> Garante que seu equipamento não causará interferência em serviços essenciais (torres de controle, celulares, Wi-Fi, etc).
+              <br>
+              <strong class="text-white">Como:</strong> Drone deve ter o selo ANATEL. Se importado, deve ser homologado.
+              <br>
+              <strong class="text-white">Risco:</strong> Multa pesada e apreensão do equipamento.
+            </p>
+          </div>
+          
+          <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl text-center transition-all duration-300 hover:shadow-lg hover:border-blue-500">
+            <img src="https://placehold.co/100x100/1e293b/94a3b8?text=ANAC" class="mx-auto rounded-full mb-4" alt="[Logo da ANAC]">
+            <h3 class="mt-4 text-2xl font-bold text-white">2. ANAC</h3>
+            <p class="mt-2 text-slate-300 text-left space-y-2">
+              <strong class="text-white">Função:</strong> Fiscaliza a SEGURANÇA DA AVIAÇÃO CIVIL.
+              <br>
+              <strong class="text-white">O Quê:</strong> Regras de operação, registro e seguro. (RBAC-E Nº 94).
+              <br>
+              <strong class="text-white">Por Quê:</strong> Protege pessoas e propriedades no solo.
+              <br>
+              <strong class="text-white">Como:</strong> Registro no SISANT (drones > 250g), Seguro RETA (uso profissional), regras de distância (30m de pessoas).
+              <br>
+              <strong class="text-white">Risco:</strong> Multas administrativas (R$ 2.000 a R$ 50.000).
+            </p>
+          </div>
+
+          <div class="bg-blue-800/30 border border-blue-500 rounded-xl p-6 shadow-2xl text-center">
+            <img src="https://placehold.co/100x100/1e293b/94a3b8?text=DECEA" class="mx-auto rounded-full mb-4" alt="[Logo do DECEA]">
+            <h3 class="mt-4 text-2xl font-bold text-white">3. DECEA (Nosso Foco)</h3>
+            <p class="mt-2 text-slate-200 text-left space-y-2">
+              <strong class="text-white">Função:</strong> Fiscaliza o TRÁFEGO AÉREO.
+              <br>
+              <strong class="text-white">O Quê:</strong> Acesso e uso do Espaço Aéreo. (ICA 100-40 / MCA 56-2).
+              <br>
+              <strong class="text-white">Por Quê:</strong> Protege aeronaves tripuladas (aviões, helicópteros).
+              <br>
+              <strong class="text-white">Como:</strong> Define ONDE, QUANDO e COMO voar. Exige autorização via SARPAS para voos profissionais.
+              <br>
+              <strong class="text-white">Risco:</strong> Responsabilidade CRIMINAL (Art. 132).
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Módulo ICA 100-40 (Profissional) - Super Detalhado ===== -->
+    <section id="ica100-40" class="py-20 bg-slate-800/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-blue-400 font-semibold uppercase tracking-wider">Módulo 2 - DECEA</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-white">ICA 100-40: Voo Profissional (NÃO Recreativo)</h2>
+          <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
+            Análise da <strong class="text-blue-300">Portaria DECEA Nº 928/DNOR8</strong>. Cobre todo uso que gere receita, uso corporativo, pesquisa, etc.
+          </p>
+        </div>
+
+        <!-- O que mudou? -->
+        <div class="bg-slate-900 border border-slate-700 rounded-xl shadow-xl p-8 md:p-12 mb-12">
+          <h3 class="text-3xl font-bold text-white mb-6 text-center">O que mudou na ICA 100-40 (2023 vs 2020)?</h3>
+          <ul class="space-y-4 text-slate-300 text-lg list-disc list-inside">
+            <li><strong class="text-white">Terminologia (UAS vs RPA):</strong> Alinhamento com termos internacionais (ICAO). "RPA" (Aeronave Remotamente Pilotada) é um tipo de "UAS" (Sistema de Aeronave não Tripulada).</li>
+            <li><strong class="text-white">Clarificação de EVLOS:</strong> A regra de Voo Visual Estendido (EVLOS) foi melhor definida, exigindo observadores remotos treinados e com comunicação direta com o piloto.</li>
+            <li><strong class="text-white">Procedimentos SARPAS:</strong> Ajustes finos nos prazos e requisitos para solicitação de voo, especialmente em áreas controladas.</li>
+            <li><strong class="text-white">Revogação Expressa:</strong> A portaria antiga (2020) está oficialmente REVOGADA. Não consulte material antigo!</li>
+          </ul>
+        </div>
+        
+        <!-- NOVO BLOCO: O que é Voo Profissional? -->
+        <div class="bg-slate-900 border border-blue-500 rounded-xl shadow-xl p-8 md:p-12 mb-12">
+          <h3 class="text-3xl font-bold text-white mb-6 text-center">Quando a <span class="text-blue-300">ICA 100-40</span> se Aplica?</h3>
+          <p class="text-lg text-slate-300 text-center max-w-2xl mx-auto mb-6">A regra é simples: <strong class="text-white">NÃO é lazer? Então é ICA 100-40.</strong> Se o voo tem qualquer fim comercial, corporativo ou de pesquisa, ele se enquadra aqui. Isso inclui:</p>
+          <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6 text-lg text-center">
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Fotografia/Filmagem Comercial</strong></li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Inspeções</strong> (Prédios, Torres, Teto)</li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Topografia e Mapeamento</strong></li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Pulverização Agrícola</strong></li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Voo para Imobiliária</strong></li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Pesquisa e Ciência</strong></li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Segurança e Vigilância</strong></li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Delivery (Logística)</strong></li>
+            <li class="bg-slate-800 p-4 rounded-lg"><strong class="text-white">Qualquer voo corporativo</strong></li>
+          </ul>
+        </div>
+
+        <!-- NOVO BLOCO: Definições Chave do Documento -->
+        <div class="bg-slate-900 border border-slate-700 rounded-xl shadow-xl p-8 md:p-12 mb-12">
+          <h3 class="text-3xl font-bold text-white mb-6 text-center">Definições Chave (ICA 100-40)</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-lg text-left">
+            <div class="bg-slate-800 p-6 rounded-lg">
+              <h4 class="text-xl font-bold text-blue-300 mb-2">FRZ (Flight Restriction Zone)</h4>
+              <p class="text-slate-300">"Zona de Restrição de Voo". São as áreas críticas ao redor de aeródromos (ZAD, ZEA) e helipontos (ZEH) onde o voo requer análise e autorização especial, mesmo em baixas alturas. (2.1.72)</p>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-lg">
+              <h4 class="text-xl font-bold text-blue-300 mb-2">Operação No Entorno de Estrutura</h4>
+              <p class="text-slate-300">Definição precisa: Voo limitado a <strong class="text-white">5m acima</strong> da estrutura e <strong class="text-white">30m horizontalmente</strong> dela. Possui regras de distância de aeroportos mais brandas que o voo padrão. (2.1.45 / 6.2.3)</p>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-lg">
+              <h4 class="text-xl font-bold text-blue-300 mb-2">Operação em Área Confinada</h4>
+              <p class="text-slate-300">Voo dentro da "fachada interna de prédios", ginásios, estádios (mesmo a céu aberto, até o limite da estrutura). <strong class="text-white">Não é considerado espaço aéreo DECEA</strong> e não requer SARPAS. (6.2.2)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Definições Visuais -->
+        <div class="mb-12">
+          <h3 class="text-3xl font-bold text-white mb-8 text-center">Tipos de Voo: VLOS vs EVLOS vs BVLOS</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- VLOS -->
+            <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 shadow-xl">
+              <img src="https://placehold.co/600x300/1e293b/94a3b8?text=Ilustração+VLOS+(Piloto+vê+o+drone)" class="rounded-lg mb-4" alt="[Ilustração de Voo Visual]">
+              <h4 class="text-2xl font-bold text-white">VLOS (Visual)</h4>
+              <p class="text-slate-300 mt-2">O piloto mantém contato visual DIRETO com o drone, sem ajuda de binóculos ou câmeras (FPV). É a regra padrão.</p>
+            </div>
+            <!-- EVLOS -->
+            <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 shadow-xl">
+              <img src="https://placehold.co/600x300/1e293b/94a3b8?text=Ilustração+EVLOS+(Piloto+e+Observador)" class="rounded-lg mb-4" alt="[Ilustração de Voo Visual Estendido]">
+              <h4 class="text-2xl font-bold text-white">EVLOS (Estendido)</h4>
+              <p class="text-slate-300 mt-2">O piloto voa (pode usar FPV), mas um <strong class="text-white">Observador Remoto</strong> treinado mantém o VLOS e se comunica com o piloto via rádio.</p>
+            </div>
+            <!-- BVLOS -->
+            <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 shadow-xl">
+              <img src="https://placehold.co/600x300/1e293b/94a3b8?text=Ilustração+BVLOS+(Piloto+voa+por+instrumentos)" class="rounded-lg mb-4" alt="[Ilustração de Voo Além do Alcance Visual]">
+              <h4 class="text-2xl font-bold text-white">BVLOS (Além do Visual)</h4>
+              <p class="text-slate-300 mt-2">Ninguém vê o drone. O voo é operado por instrumentos (telemetria). Exige autorização MUITO complexa e aeronave robusta.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Regras Chave e SARPAS (BLOCO ATUALIZADO) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          
+          <!-- REGRAS (SUPER DETALHADO) -->
+          <div class="bg-slate-900 border border-slate-700 rounded-xl shadow-xl p-8 md:p-12">
+            <h3 class="text-2xl font-bold text-white mb-6">Regras Chave Detalhadas (ICA 100-40):</h3>
+            <ul class="space-y-5 text-slate-300 text-lg">
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">SARPAS 100% OBRIGATÓRIO:</strong> TODO voo não-recreativo exige uma solicitação no SARPAS. Não há exceção. Voar sem SARPAS aprovado é uma infração grave.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">Altitude Padrão (VLOS):</strong> 120m (400 pés) acima do solo (AGL) é o limite padrão para voos visuais em espaço aéreo não controlado (Classe G).</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">OPERAÇÕES ACIMA DE 120m (400 pés):</strong> Exigem autorização especial. O piloto deve apresentar uma análise de risco (SORA) e justificar a necessidade. O processo é muito mais complexo e demorado.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-yellow-300 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                <span><strong class="text-white">ESPAÇO AÉREO CONTROLADO (ATZ, CTR, TMA):</strong> Voar dentro da área de um aeroporto (ATZ) ou sua zona de controle (CTR) <strong class="text-yellow-300">SEMPRE</strong> exige autorização e coordenação do órgão de tráfego aéreo local (Torre ou Controle), mesmo que o voo seja baixo (ex: 30m).</span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">PRAZOS DO SARPAS (Planejamento é Chave):</strong>
+                  <ul class="list-disc list-inside mt-2 pl-4 text-slate-400">
+                    <li><strong class="text-white">Voos simples (VLOS, <120m, fora de ATZ/CTR):</strong> Mínimo de 2 dias úteis.</li>
+                    <li><strong class="text-white">Voos em ATZ/CTR (perto de aeroportos):</strong> Mínimo de 7 a 18 dias úteis, dependendo da complexidade e do órgão local.</li>
+                    <li><strong class="text-white">Voos BVLOS ou >120m:</strong> Prazos muito maiores (30+ dias), pois exigem análise de segurança detalhada (SORA).</li>
+                  </ul>
+                </span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">FPV (First Person View):</strong> O uso de óculos FPV <strong class="text-yellow-300">caracteriza operação BVLOS</strong>. Para ser considerado VLOS, exige a presença de um Observador de UA (6.1.8).</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">VOO NOTURNO:</strong> Permitido, desde que o drone possua luzes que "possibilitem ser avistadas à noite" (para drones < 25kg, VLOS, <400ft). (6.1.17)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-red-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+                <span><strong class="text-white">DEVER DE ENCERRAR O VOO:</strong> "Mesmo que tenha sido autorizada, toda e qualquer operação de Aeronave Não Tripulada deve ser <strong class="text-red-300">imediatamente encerrada</strong> ao ser verificada a aproximação de aeronaves tripuladas". (6.1.21)</span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">EXCEÇÃO SARPAS (< 250g):</strong> Operações VLOS com drones de PMD <strong class="text-teal-300">até 250g</strong>, realizadas até <strong class="text-teal-300">200 pés</strong> (~60m) e <strong class="text-teal-300">FORA de FRZ</strong>, estão <strong class="text-white">DISPENSADAS</strong> de solicitação no SARPAS. (7.3.1 Nota)</span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-blue-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">COMUNICAÇÃO E TRANSPONDER:</strong> Para operações complexas (BVLOS, em espaço controlado), o DECEA pode exigir que o piloto tenha um rádio VHF para escuta da fonia local e que a aeronave possua um transponder (ex: ADS-B).</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- VÍDEO E NOVA ILUSTRAÇÃO -->
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-4">Vídeo Tutorial: Solicitando Voo no SARPAS</h3>
+              <div class="video-container rounded-lg overflow-hidden shadow-lg border border-slate-700">
+                <!-- O ID zB4I_q_L61Y é de um vídeo genérico sobre drones. Substitua por um tutorial real do SARPAS se tiver. -->
+                <iframe src="https://www.youtube.com/embed/zB4I_q_L61Y?si=S1v1E_q2A6x8bJ9o" title="Vídeo tutorial do SARPAS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <p class="text-slate-300 mt-4 text-center">Demonstração do passo-a-passo para preencher a solicitação de voo.</p>
+            </div>
+
+            <!-- NOVA ILUSTRAÇÃO -->
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-4">Ilustração: Espaço Aéreo Controlado</h3>
+               <div class="bg-slate-900 p-4 rounded-xl shadow-lg border border-slate-700">
+                <img 
+                  src="https://placehold.co/600x400/1e293b/94a3b8?text=Diagrama:+ATZ+e+CTR+(Funil+de+Aeroporto)" 
+                  alt="[Diagrama do espaço aéreo controlado]" 
+                  class="rounded-lg object-cover w-full"
+                  onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Diagrama+ATZ+e+CTR'"
+                >
+                <p class="text-slate-300 mt-2 text-center">Visualização da ATZ (círculo azul) e CTR (área maior) onde as regras são mais rígidas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOVO BLOCO: Operações Especiais -->
+        <div class="mt-12 bg-slate-900 border border-slate-700 rounded-xl shadow-xl p-8 md:p-12">
+          <h3 class="text-3xl font-bold text-white mb-8 text-center">Operações Especiais (ICA 100-40)</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-lg">
+            
+            <!-- Aeroagrícola -->
+            <div class="bg-slate-800 p-6 rounded-lg border border-slate-600">
+              <h4 class="text-xl font-bold text-green-400 mb-2">Operação Aeroagrícola (6.2.11)</h4>
+              <p class="text-slate-300">Para pulverização. Regra especial: Drones com PMD <strong class="text-white">> 25kg</strong> podem solicitar com antecedência de apenas <strong class="text-white">30 minutos</strong> se o voo for VLOS/EVLOS, até 100 pés e fora de FRZ. (Nota 3)</p>
+            </div>
+            
+            <!-- Aerolevantamento -->
+            <div class="bg-slate-800 p-6 rounded-lg border border-slate-600">
+              <h4 class="text-xl font-bold text-cyan-400 mb-2">Operação de Aerolevantamento (6.2.9)</h4>
+              <p class="text-slate-300">Para topografia e mapeamento. Exige antecedência mínima de <strong class="text-white">4 dias</strong> no SARPAS. O piloto deve apresentar a <strong class="text-white">"Portaria de Inscrição no Ministério da Defesa (MD)"</strong> no momento da solicitação. (Nota 1, 2)</p>
+            </div>
+            
+            <!-- Atípica -->
+            <div class="bg-slate-800 p-6 rounded-lg border border-slate-600">
+              <h4 class="text-xl font-bold text-purple-400 mb-2">Operação Atípica (6.2.10)</h4>
+              <p class="text-slate-300">Operações que não se encaixam nas regras. Exemplos: <strong class="text-white">"VOOS simultâneos (Multidrones)"</strong> (shows de luzes) e <strong class="text-white">"corridas/competições (Drone Racing)"</strong>. Exigem análise ATM e prazo de <strong class="text-white">12 dias</strong>. (Nota 1, 2)</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 4. Módulo MCA 56-2 (Recreativo) - Detalhado e ATUALIZADO ===== -->
+    <section id="mca56-2" class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-teal-400 font-semibold uppercase tracking-wider">Módulo 3 - DECEA</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-white">MCA 56-2: O Manual do Voo Recreativo (Aeromodelos)</h2>
+          <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
+            Análise da <strong class="text-teal-300">Portaria DECEA Nº 930/DNOR8</strong>. Cobre <strong class="text-white">APENAS</strong> aeromodelos (hobby, lazer, esporte) - aeronaves não tripuladas usadas <strong class="text-white">exclusivamente</strong> para fins recreativos. (1.1 / 2.1.1)
+          </p>
+        </div>
+
+        <!-- O que NÃO é recreativo? -->
+        <div class="bg-yellow-900/30 border border-yellow-700 rounded-xl shadow-xl p-8 md:p-12 mb-12">
+          <h3 class="text-3xl font-bold text-white mb-6 text-center">Atenção: Uso EXCLUSIVAMENTE Recreativo!</h3>
+          <p class="text-lg text-yellow-200 text-center max-w-2xl mx-auto">"É <strong class="text-white">expressamente proibido</strong> realizar operação com fins lucrativos utilizando uma solicitação de acesso de natureza RECREATIVA." (3.10 Nota). Se o voo não for <strong class="text-white">APENAS</strong> por hobby/lazer, siga a <strong class="text-white">ICA 100-40</strong>.</p>
+        </div>
+
+        <!-- Divisão: Dentro vs Fora de EAC -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+          
+          <!-- Dentro de EAC -->
+          <div class="bg-slate-800 border border-teal-500 rounded-xl shadow-xl p-8 md:p-12 h-full">
+            <h3 class="text-2xl font-bold text-white mb-6">Regras Dentro de <span class="text-teal-300">EAC</span> para Aeromodelismo (6.2)</h3>
+            <p class="text-slate-300 mb-4 text-lg">EAC = Espaço Aéreo Condicionado (Área Proibida, Restrita ou Perigosa) criado especificamente para a prática de aeromodelismo.</p>
+            <ul class="space-y-4 text-slate-300 text-lg">
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">FPV Permitido sem Observador:</strong> Uso de óculos FPV é autorizado mesmo sem um observador auxiliar. (6.2.1.a)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">Altura e Limites do EAC:</strong> Voar dentro dos limites verticais (máx. 120m AGL, se não especificado) e horizontais definidos na publicação do EAC. (6.2.1.b, c)</span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">Sem Limite de Velocidade (dentro do EAC):</strong> A velocidade não é limitada, desde que dentro dos limites da área designada. (6.2.1.d)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">Pessoas Consideradas Anuentes:</strong> Não há regra de afastamento de pessoas, pois quem está no EAC é considerado anuente. (6.2.1.e)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">SARPAS Dispensado:</strong> Não é necessário solicitar voo no SARPAS para operar DENTRO de um EAC de aeromodelismo. (6.2.1.f)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Fora de EAC -->
+          <div class="bg-slate-800 border border-slate-700 rounded-xl shadow-xl p-8 md:p-12 h-full">
+            <h3 class="text-2xl font-bold text-white mb-6">Regras <span class="text-yellow-300">FORA</span> de EAC (Mais Restritivas) (6.3)</h3>
+             <p class="text-slate-300 mb-4 text-lg">Se o voo recreativo NÃO ocorrer em uma área oficialmente designada (EAC).</p>
+            <ul class="space-y-4 text-slate-300 text-lg">
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-yellow-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                <span><strong class="text-white">FPV Exige Observador:</strong> Uso de óculos FPV só é permitido com a presença e auxílio direto de um "Observador de Aeromodelo" próximo. (6.3.1.1.h)</span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-yellow-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                <span><strong class="text-white">Altura Máxima:</strong> 200 pés (~60m) AGL. (6.3.1.2.b)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-yellow-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                <span><strong class="text-white">Limite Horizontal:</strong> Máximo 200m de distância do piloto. (6.3.1.1.b)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-yellow-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                <span><strong class="text-white">Velocidade Máxima:</strong> Limitada a 40 km/h. (6.3.1.1.c)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-yellow-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                <span><strong class="text-white">SARPAS Obrigatório (>250g):</strong> Se o aeromodelo tiver PMD > 250g, a solicitação no SARPAS é <strong class="text-white">obrigatória</strong> (antecedência mín. 30 min). (6.1.6 / 6.3.1.2 Nota 1)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">SARPAS Dispensado (<250g):</strong> Se PMD <= 250g, voo até 200ft e FORA de FRZ, <strong class="text-white">NÃO precisa</strong> solicitar no SARPAS. (6.1.6 Nota / 6.3.1.2 Nota 3)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Regras Gerais + Ilustração -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Regras Gerais (Texto) -->
+          <div class="bg-slate-800 border border-slate-700 rounded-xl shadow-xl p-8 md:p-12">
+            <h3 class="text-2xl font-bold text-white mb-6">Regras Gerais (Aplicáveis a AMBOS os casos):</h3>
+            <ul class="space-y-4 text-slate-300 text-lg">
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-red-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+                <span><strong class="text-white">Distância MÍNIMA de Aeroportos (FRZ):</strong> As distâncias mínimas de aeródromos/helipontos (ZAD, ZEA, ZEH) definidas na ICA 100-40 (Figuras 2, 3, 4) <strong class="text-red-300">DEVEM SER RESPEITADAS</strong> mesmo no voo recreativo fora de EAC. Voar dentro da FRZ sem autorização é proibido e perigoso. (6.3.1.2)</span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-red-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+                <span><strong class="text-white">NÃO Voar Sobre Pessoas:</strong> Proibido voar sobre pessoas não anuentes/não envolvidas (Regra ANAC). (6.3.1.1.d)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-red-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+                <span><strong class="text-white">NÃO Sobrevoar Áreas de Segurança:</strong> Proibido sobrevoar presídios, refinarias, áreas militares, etc. (6.1.11)</span>
+              </li>
+               <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-red-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+                <span><strong class="text-white">NÃO Sobrevoar Áreas Sensíveis a Ruído:</strong> Hospitais, escolas, templos, casas de repouso. (6.1.12)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">Sempre em VLOS (Visual):</strong> O piloto (ou observador no caso de FPV fora de EAC) deve manter contato visual direto com o aeromodelo. (2.1.23 / 6.3.1.1.h)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="flex-shrink-0 h-6 w-6 text-teal-400 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><strong class="text-white">Encerramento Imediato:</strong> Interromper o voo imediatamente ao avistar aeronave tripulada ou drone de segurança pública. (6.1.14 / 6.1.15)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Ilustração -->
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Ilustração: Onde NÃO Voar (Recreativo)</h3>
+            <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-red-700">
+              <img 
+                src="https://placehold.co/600x400/1e293b/ef4444?text=ÁREAS+PROIBIDAS+(FRZ,+Áreas+de+Segurança,+Sensíveis+a+Ruído)" 
+                alt="[Diagrama de áreas proibidas para voo recreativo]" 
+                class="rounded-lg object-cover w-full"
+                onerror="this.src='https://placehold.co/600x400/1e293b/ef4444?text=ÁREAS+PROIBIDAS'"
+              >
+              <p class="text-red-300 mt-2 text-center font-semibold">Respeite as FRZ de aeroportos e as áreas de segurança.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Módulo Riscos e Penalidades (Detalhado) ===== -->
+    <section id="riscos" class="py-20 bg-slate-800/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-red-400 font-semibold uppercase tracking-wider">Módulo 4</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-white">Riscos e Penalidades: A Fiscalização</h2>
+          <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
+            Ignorar qualquer um dos 3 pilares tem consequências sérias e cumulativas.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-yellow-900/30 border border-yellow-700 rounded-xl p-6 shadow-xl flex flex-col">
+            <svg class="w-12 h-12 text-yellow-300 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.108l-.04.04a.75.75 0 01-1.06 0l-.04-.04a.75.75 0 010-1.06l.04-.04a.75.75 0 011.06 0l.04.04a.75.75 0 010 1.06z" /></svg>
+            <h3 class="text-2xl font-bold text-yellow-300 mb-3 text-center">Infração ANATEL</h3>
+            <p class="text-slate-300">
+              <strong class="text-white">Problema:</strong> Drone sem selo de homologação (importado, sem selo).
+              <br>
+              <strong class="text-white">Consequência:</strong> Multa (R$ 100 a R$ 3.000+) e Apreensão imediata do equipamento.
+            </p>
+          </div>
+          
+          <div class="bg-yellow-900/30 border border-yellow-700 rounded-xl p-6 shadow-xl flex flex-col">
+            <svg class="w-12 h-12 text-yellow-300 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+            <h3 class="text-2xl font-bold text-yellow-300 mb-3 text-center">Infração ANAC</h3>
+            <p class="text-slate-300">
+              <strong class="text-white">Problema:</strong> Voar sem registro SISANT (>250g), sem seguro RETA (uso profissional), ou perto de pessoas (<30m).
+              <br>
+              <strong class="text-white">Consequência:</strong> Processo administrativo e Multas (R$ 2.000 a R$ 50.000).
+            </p>
+          </div>
+          
+          <div class="bg-red-900/30 border border-red-700 rounded-xl p-6 shadow-2xl flex flex-col">
+             <svg class="w-12 h-12 text-red-300 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+            <h3 class="text-2xl font-bold text-red-300 mb-3 text-center">Infração DECEA (A mais grave)</h3>
+            <p class="text-slate-200">
+              <strong class="text-white">Problema:</strong> Voar em zona de aproximação de aeroporto (ATZ/CTR) sem autorização, ou voar sem SARPAS aprovado (quando obrigatório).
+              <br>
+              <strong class="text-white">Consequência:</strong> Ação policial, apreensão e processo CRIMINAL.
+              <br>
+              <strong class="text-white">Código Penal (Art. 132):</strong> "Expor a vida ou a saúde de outrem a perigo direto e iminente".
+              <br>
+              <strong class="text-white">Código Penal (Art. 261):</strong> "Expor a perigo aeronave... ou praticar qualquer ato tendente a impedir ou dificultar a navegação aérea".
+            </p>
+          </div>
+
+        </div>
+        
+        <!-- Case Study -->
+        <div class="mt-12 bg-slate-900 border border-slate-700 rounded-xl p-8">
+           <h3 class="text-3xl font-bold text-white mb-6 text-center">Exemplo Real (Notícia)</h3>
+           <div class="flex flex-col md:flex-row gap-8 items-center">
+             <img src="https://placehold.co/400x250/1e293b/ef4444?text=Notícia:+Piloto+detido+em+aeroporto" alt="[Foto de notícia]" class="rounded-lg object-cover">
+             <div>
+               <h4 class="text-2xl font-bold text-red-400 mb-2">Piloto de drone é detido por voo ilegal perto do Aeroporto de Congonhas.</h4>
+               <p class="text-lg text-slate-300">
+                 "Um homem foi detido pela Polícia Militar após ser flagrado operando um drone na zona de aproximação do Aeroporto de Congonhas, em São Paulo. O voo não autorizado forçou duas aeronaves comerciais a arremeterem, causando atrasos e um risco grave à segurança aérea. O piloto teve o equipamento apreendido e responderá por crime contra a segurança do transporte aéreo."
+               </p>
+               <p class="text-md text-slate-400 mt-2">(Exemplo ilustrativo baseado em casos reais.)</p>
+             </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. Módulo Galeria (Mais Ilustrações) ===== -->
+    <section id="galeria" class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-blue-400 font-semibold uppercase tracking-wider">Módulo 5</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-white">Galeria de Recursos Visuais</h2>
+          <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
+            Recursos visuais para consolidar os conceitos da apresentação.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Imagem 1 -->
+          <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-700">
+            <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Checklist+Pré-Voo+(Detalhado)" alt="[Checklist Pré-Voo]" class="rounded-lg object-cover w-full" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Checklist'">
+            <h3 class="mt-4 text-xl font-bold text-white">Slide: Checklist Pré-Voo</h3>
+            <p class="text-slate-300 mt-1">Verificar: Bateria, hélices, GPS, Clima, SARPAS, ANAC, ANATEL, área de pouso.</p>
+          </div>
+          
+          <!-- Vídeo 2 -->
+          <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-700">
+            <div class="video-container rounded-lg overflow-hidden border border-slate-600">
+              <iframe src="https://www.youtube.com/embed/zB4I_q_L61Y?si=S1v1E_q2A6x8bJ9o" title="Vídeo inspiracional de drone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-white">Vídeo: Voo Seguro na Prática</h3>
+            <p class="text-slate-300 mt-1">Exemplo de voo profissional seguindo as regras de segurança.</p>
+          </div>
+          
+          <!-- Imagem 3 -->
+          <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-700">
+            <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Infográfico:+Mapa+SARPAS+(ATZ,+CTR)" alt="[Mapa de áreas no SARPAS]" class="rounded-lg object-cover w-full" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Mapa+SARPAS'">
+            <h3 class="mt-4 text-xl font-bold text-white">Ilustração: Entendendo o Mapa SARPAS</h3>
+            <p class="text-slate-300 mt-1">O que significam as áreas vermelhas (ATZ), amarelas (CTR) e verdes.</p>
+          </div>
+          
+          <!-- Imagem 4 (Nova) -->
+          <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-700">
+            <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Infográfico:+A+Tríade+(Resumo)" alt="[Infográfico da Tríade]" class="rounded-lg object-cover w-full" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Infográfico+Tríade'">
+            <h3 class="mt-4 text-xl font-bold text-white">Slide: Resumo da Tríade</h3>
+            <p class="text-slate-300 mt-1">ANATEL (Selo), ANAC (Registro), DECEA (Permissão de Voo).</p>
+          </div>
+
+          <!-- Imagem 5 (Nova) -->
+          <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-700">
+            <img src="https://placehold.co/600x400/1e293b/ef4444?text=Ilustração:+Distância+de+Pessoas+(30m)" alt="[Ilustração 30m de pessoas]" class="rounded-lg object-cover w-full" onerror="this.src='https://placehold.co/600x400/1e293b/ef4444?text=Distância+de+Pessoas'">
+            <h3 class="mt-4 text-xl font-bold text-white">Ilustração: Regra dos 30 Metros (ANAC)</h3>
+            <p class="text-slate-300 mt-1">A distância horizontal mínima de pessoas não-anuentes.</p>
+          </div>
+
+          <!-- Vídeo 6 (Novo) -->
+          <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-700">
+            <div class="video-container rounded-lg overflow-hidden border border-slate-600">
+              <!-- Substitua pelo ID de um vídeo de incidente/quase acidente -->
+              <iframe src="https://www.youtube.com/embed/zB4I_q_L61Y?si=S1v1E_q2A6x8bJ9o" title="Vídeo de quase acidente com drone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-white">Vídeo: Por que as Regras Existem?</h3>
+            <p class="text-slate-300 mt-1">Análise de incidentes reais (quase colisão com avião).</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. Links Úteis (Novo) ===== -->
+    <section id="links" class="py-20 bg-slate-800/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-blue-400 font-semibold uppercase tracking-wider">Módulo 6</span>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-white">Links Oficiais e Recursos</h2>
+          <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
+            Salve estes links. Consulte sempre as fontes oficiais.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          
+          <div class="bg-slate-900 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <h3 class="text-2xl font-bold text-white mb-3">DECEA (SARPAS)</h3>
+            <p class="text-slate-300 mb-4">Para solicitar voos (ICA 100-40) e consultar mapas.</p>
+            <a href="https://servicos.decea.mil.br/sarpas/" target="_blank" class="inline-block px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">Acessar SARPAS</a>
+          </div>
+          
+          <div class="bg-slate-900 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <h3 class="text-2xl font-bold text-white mb-3">ANAC (SISANT)</h3>
+            <p class="text-slate-300 mb-4">Para registrar seu drone (acima de 250g).</p>
+            <a href="https://sistemas.anac.gov.br/sisant" target="_blank" class="inline-block px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">Acessar SISANT</a>
+          </div>
+          
+          <div class="bg-slate-900 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <h3 class="text-2xl font-bold text-white mb-3">ANATEL (SCH)</h3>
+            <p class="text-slate-300 mb-4">Para homologar equipamentos importados.</p>
+            <a href="https://sistemas.anatel.gov.br/sch" target="_blank" class="inline-block px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">Acessar SCH</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===== 8. Conclusão (Slide Final) ===== -->
+    <section id="conclusao" class="py-24 bg-gradient-to-r from-blue-700 to-blue-900 min-h-screen flex items-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+          Apresentação Concluída
+        </h2>
+        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">
+          Obrigado! Lembre-se: O piloto é o único responsável pela segurança do voo. Voe com responsabilidade.
+        </p>
+        <div class="mt-10 bg-white/10 backdrop-blur-sm p-8 rounded-xl text-left border border-blue-300/50">
+          <h3 class="text-2xl font-bold text-white mb-6 text-center">Checklist Final (Os 3 "S")</h3>
+          <ul class="space-y-3 text-lg text-blue-50">
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 h-6 w-6 text-white mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              <span><strong class="text-white">SISANT (ANAC):</strong> Seu drone está registrado?</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 h-6 w-6 text-white mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              <span><strong class="text-white">SEGURO (ANAC):</strong> Seu seguro RETA é obrigatório e está válido (para uso profissional)?</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 h-6 w-6 text-white mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              <span><strong class="text-white">SARPAS (DECEA):</strong> Você solicitou autorização para este voo (se profissional/controlado)?</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-slate-900 border-t border-slate-700/50">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-slate-400">
+      <p>&copy; 2025 DroneExperts. Todos os direitos reservados.</p>
+      <p class="text-sm mt-1">Este site é um material de curso e não possui vínculo oficial com o DECEA, ANAC ou ANATEL. Consulte sempre os documentos oficiais.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
