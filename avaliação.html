@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prova - Legislação de Drones (FlyDrone012)</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    
+    .quiz-option {
+      display: block;
+      padding: 0.75rem 1rem;
+      border: 2px solid #334155; /* slate-700 */
+      background-color: #334155; /* slate-700 */
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      color: #cbd5e1; /* slate-300 */
+    }
+    
+    .quiz-option:hover {
+      border-color: #facc15; /* yellow-400 */
+    }
+    
+    /* Esconde o radio button original */
+    .quiz-option input[type="radio"] {
+      display: none;
+    }
+    
+    /* Estilo quando checado (durante a prova) */
+    .quiz-option input[type="radio"]:checked + span {
+      font-weight: 600;
+      color: #facc15; /* yellow-400 */
+    }
+    
+    /* Estilos PÓS-CORREÇÃO */
+    .quiz-option.correct {
+      border-color: #22c55e; /* green-500 */
+      background-color: #166534; /* green-800 */
+      color: #ffffff;
+      font-weight: 600;
+    }
+    
+    .quiz-option.incorrect {
+      border-color: #ef4444; /* red-500 */
+      background-color: #991b1b; /* red-800 */
+      color: #ffffff;
+      font-weight: 600;
+      opacity: 0.7;
+    }
+
+    /* Rationale (Explicação) */
+    .rationale {
+      display: none; /* Escondido por padrão */
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      background-color: #1e293b; /* slate-800 */
+      border-left: 4px solid #facc15; /* yellow-400 */
+      font-size: 0.875rem;
+      color: #cbd5e1; /* slate-300 */
+      border-radius: 0.25rem;
+    }
+
+    /* Certificado */
+    #certificateWrapper {
+      background: #f8fafc; /* gray-50 */
+      border: 10px solid #ca8a04; /* yellow-600 */
+      padding: 2rem;
+      border-radius: 0.5rem;
+      color: #1e293b; /* slate-800 */
+    }
+    
+    #certSignature {
+      border-bottom: 2px solid #334155; /* slate-700 */
+      padding-bottom: 0.25rem;
+      font-family: 'Brush Script MT', 'Brush Script Std', cursive; /* Uma fonte cursiva genérica */
+      font-size: 1.5rem;
+      color: #1e293b;
+    }
+
+  </style>
+</head>
+
+<body class="bg-slate-900 text-slate-200 antialiased">
+
+  <header class="bg-slate-800 p-4 shadow-md border-b border-b-yellow-500/30">
+    <h1 class="text-2xl font-bold text-center text-white">
+      FlyDrone<span class="text-yellow-400">012</span> - <span class="font-normal">Prova de Conclusão</span>
+    </h1>
+    <p class="text-center text-sm text-slate-400">Legislação de Drones (DECEA 2023)</p>
+  </header>
+  
+  <main class="max-w-4xl mx-auto p-4 md:p-8">
+    
+    <!-- User Info Form -->
+    <section id="userInfo" class="bg-slate-800 p-6 rounded-lg shadow-lg mb-8 border border-slate-700">
+      <h2 class="text-xl font-semibold mb-4 text-white">Informações do Aluno</h2>
+      
+      <!-- O 'form' agora engloba tudo -->
+      <form id="quizForm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="firstName" class="block text-sm font-medium text-slate-300">Nome</label>
+            <input type="text" id="firstName" name="firstName" class="mt-1 block w-full bg-slate-700 border border-slate-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-500 focus:border-yellow-500" required>
+          </div>
+          <div>
+            <label for="lastName" class="block text-sm font-medium text-slate-300">Sobrenome</label>
+            <input type="text" id="lastName" name="lastName" class="mt-1 block w-full bg-slate-700 border border-slate-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-500 focus:border-yellow-500" required>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-slate-300">Email</label>
+          <input type="email" id="email" name="email" class="mt-1 block w-full bg-slate-700 border border-slate-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-500 focus:border-yellow-500" required>
+          <p class="text-xs text-slate-400 mt-1">Seu certificado (se aprovado) será gerado nesta página.</p>
+        </div>
+        
+        <!-- Mensagem de Erro do Formulário -->
+        <p id="formError" class="text-red-400 text-sm font-medium hidden"></p>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer" class="mt-8 space-y-6">
+          <!-- As perguntas serão injetadas aqui pelo JavaScript -->
+        </div>
+        
+        <!-- Botão Enviar -->
+        <div class="mt-10 text-center">
+          <button type="submit" id="submitButton" class="w-full md:w-auto bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-500/50">
+            Enviar Prova e Ver Resultado
+          </button>
+        </div>
+      </form>
+    </section>
+    
+    <!-- Container de Resultados (Escondido) -->
+    <section id="resultsContainer" class="hidden bg-slate-800 p-6 rounded-lg shadow-lg mb-8 border border-slate-700">
+      <h2 class="text-3xl font-bold text-center text-yellow-400 mb-4">Seu Resultado</h2>
+      <p id="scoreText" class="text-2xl text-center font-bold text-white"></p>
+      <p id="passFailText" class="text-center text-xl mt-2 font-semibold"></p>
+    </section>
+    
+    <!-- Container do Certificado (Escondido) -->
+    <section id="certificateContainer" class="hidden mb-8">
+      <div id="certificateWrapper" class="relative">
+        
+        <!-- Ornamento (simulado com CSS) -->
+        <div class="absolute top-2 left-2 w-8 h-8 border-l-4 border-t-4 border-yellow-700/50"></div>
+        <div class="absolute top-2 right-2 w-8 h-8 border-r-4 border-t-4 border-yellow-700/50"></div>
+        <div class="absolute bottom-2 left-2 w-8 h-8 border-l-4 border-b-4 border-yellow-700/50"></div>
+        <div class="absolute bottom-2 right-2 w-8 h-8 border-r-4 border-b-4 border-yellow-700/50"></div>
+
+        <div class="text-center p-4">
+          <p class="text-lg font-semibold uppercase text-slate-600 tracking-wider">FlyDrone012</p>
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mt-6 mb-4">CERTIFICADO DE CONCLUSÃO</h1>
+          <p class="text-lg text-slate-600">Certificamos que</p>
+          <h2 id="certStudentName" class="text-3xl md:text-4xl font-bold text-yellow-700 my-8 px-4 py-2 bg-yellow-50 border-y-2 border-yellow-600/30">
+            <!-- Nome do Aluno -->
+          </h2>
+          <p class="text-lg text-slate-600">concluiu com sucesso a avaliação do curso de</p>
+          <h3 class="text-2xl font-semibold text-slate-800 mt-2">Legislação de Drones (DECEA 2023)</h3>
+          <p class="text-slate-600 mt-2">Com média final de <span id="certScore" class="font-bold text-xl"></span>.</p>
+          
+          <div class="flex flex-col md:flex-row justify-between items-center mt-20 max-w-lg mx-auto">
+            <div class="text-center mb-8 md:mb-0">
+              <p class="text-sm text-slate-500">Emitido em:</p>
+              <p id="certDate" class="font-semibold text-slate-700"></p>
+            </div>
+            <div class="text-center">
+              <p id="certSignature" class="px-8">FlyDrone012</p>
+              <p class="text-sm text-slate-500 mt-1">Instrutor Responsável</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+<script>
+  // --- Banco de Dados do Quiz ---
+  // (Baseado no drone_quiz_02)
+  const quizData = [
+    {
+      question: "Qual órgão é o principal responsável por fiscalizar o TRÁFEGO AÉREO e autorizar o acesso de drones ao espaço aéreo brasileiro?",
+      options: [
+        "ANATEL",
+        "ANAC",
+        "DECEA",
+        "Ministério da Defesa (MD)"
+      ],
+      correctAnswer: 2, // DECEA
+      rationales: [
+        "A ANATEL foca na homologação e fiscalização das radiofrequências dos equipamentos.",
+        "A ANAC foca na segurança da aviação civil, registro das aeronaves e regras de operação para proteger pessoas no solo.",
+        "O DECEA (Departamento de Controle do Espaço Aéreo) gerencia o espaço aéreo e emite as autorizações via SARPAS para proteger a navegação aérea.",
+        "O MD está envolvido em casos específicos como aerolevantamento, mas não é o órgão central para autorização de voo rotineira."
+      ]
+    },
+    {
+      question: "Um drone com Peso Máximo de Decolagem (PMD) de 300g, utilizado exclusivamente para hobby (voo recreativo), precisa ser registrado em qual sistema?",
+      options: [
+        "SARPAS (DECEA)",
+        "SISANT (ANAC)",
+        "SEI (ANATEL)",
+        "Não precisa de registro"
+      ],
+      correctAnswer: 1, // SISANT (ANAC)
+      rationales: [
+        "O SARPAS é para solicitar autorização de voo ao DECEA, não para o registro inicial da aeronave.",
+        "A ANAC exige o registro no SISANT para todas as aeronaves não tripuladas (incluindo aeromodelos) com PMD acima de 250g.",
+        "O SEI da ANATEL é utilizado para processos de homologação de equipamentos, não para o registro da aeronave em si.",
+        "O registro é dispensado apenas para aeronaves com PMD de até 250g."
+      ]
+    },
+    {
+      question: "Para realizar um voo PROFISSIONAL (não recreativo) com um drone de 2kg, qual seguro é obrigatório pela ANAC?",
+      options: [
+        "Seguro RETA",
+        "Seguro de Casco",
+        "Seguro Aeronáutico (obrigatório apenas para Classe 1 e 2)",
+        "Nenhum seguro é obrigatório para drones Classe 3"
+      ],
+      correctAnswer: 0, // Seguro RETA
+      rationales: [
+        "O Seguro de Responsabilidade Civil do Explorador ou Transportador Aéreo (RETA) é exigido pela ANAC para cobrir danos a terceiros em solo em todas as operações não recreativas.",
+        "O seguro de casco cobre danos à própria aeronave, sendo opcional e não uma exigência regulatória da ANAC para voos professionals.",
+        "Embora aeronaves maiores exijam seguros específicos, o RETA é obrigatório para *toda* operação profissional, incluindo Classe 3.",
+        "A obrigatoriedade do RETA para voos profissionais independe da classe do drone."
+      ]
+    },
+    {
+      question: "Você precisa fazer um voo profissional (ICA 100-40) a 50 metros de altura (aprox. 165 pés), a 2 km de distância de um heliponto. Qual o prazo mínimo de antecedência para solicitar autorização no SARPAS, assumindo que esta distância está DENTRO da FRZ do heliponto para essa altura?",
+      options: [
+        "30 minutos",
+        "4 dias corridos",
+        "12 dias corridos",
+        "Não precisa solicitar no SARPAS"
+      ],
+      correctAnswer: 1, // 4 dias corridos
+      rationales: [
+        "O prazo de 30 minutos geralmente se aplica a voos que cumprem os parâmetros de distância mínima (fora da FRZ) ou são recreativos (>250g) fora de EAC e FRZ.",
+        "Voos profissionais dentro de FRZ (como perto de helipontos abaixo de 120m) que não seguem as distâncias mínimas exigem análise e Termo de Coordenação, necessitando de 4 dias de antecedência.",
+        "O prazo de 12 dias é geralmente para voos mais complexos que exigem NOTAM (como BVLOS, acima de 120m, ou operações atípicas).",
+        "Voos profissionais sempre exigem solicitação no SARPAS (exceto a regra específica <250g/<200ft/fora FRZ). Voar em FRZ reforça essa necessidade."
+      ]
+    },
+    {
+      question: "De acordo com a MCA 56-2, qual é a altura máxima permitida para um voo RECREATIVO realizado FORA de um Espaço Aéreo Condicionado (EAC) para aeromodelismo?",
+      options: [
+        "120 metros (400 pés)",
+        "90 metros (300 pés)",
+        "60 metros (200 pés)",
+        "30 metros (100 pés)"
+      ],
+      correctAnswer: 2, // 60 metros (200 pés)
+      rationales: [
+        "120 metros (400 pés) é o limite padrão para voos profissionais VLOS (ICA 100-40), não para recreativos fora de EAC.",
+        "Este valor não corresponde ao limite estabelecido para voos recreativos fora de EAC.",
+        "A MCA 56-2 estabelece um limite de altura mais restritivo (200 pés ou aprox. 60m) para voos recreativos fora de áreas designadas.",
+        "Embora existam regras de distância relacionadas a 30m de altura perto de aeroportos, este não é o limite vertical máximo geral para voo recreativo fora de EAC."
+      ]
+    },
+    {
+      question: "Utilizar óculos FPV (First Person View) durante um voo PROFISSIONAL (ICA 100-40) caracteriza qual tipo de operação se NÃO houver um Observador de UA auxiliando?",
+      options: [
+        "VLOS (Visual Line of Sight)",
+        "EVLOS (Extended Visual Line of Sight)",
+        "BVLOS (Beyond Visual Line of Sight)",
+        "Operação Atípica"
+      ],
+      correctAnswer: 2, // BVLOS
+      rationales: [
+        "VLOS exige que o piloto (ou observador) mantenha contato visual direto com a aeronave, o que não ocorre quando se usa apenas FPV.",
+        "EVLOS requer especificamente a presença de um ou mais Observadores de UA para manter o contato visual enquanto o piloto pode usar FPV.",
+        "Como nem o piloto nem um observador mantêm contato visual direto com o drone ao usar apenas FPV, a operação é classificada como BVLOS pela ICA 100-40.",
+        "Embora o BVLOS possa exigir procedimentos de Operação Atípica em alguns casos, o uso isolado de FPV já o classifica como BVLOS por definição."
+      ]
+    },
+    {
+      question: "Qual é a distância horizontal mínima que um operador de drone (regido pela ANAC) deve manter de pessoas não anuentes durante o voo?",
+      options: [
+        "10 metros",
+        "30 metros",
+        "50 metros",
+        "Não há distância mínima especificada"
+      ],
+      correctAnswer: 1, // 30 metros
+      rationales: [
+        "A ANAC estabelece uma distância maior para garantir a segurança das pessoas em solo.",
+        "A RBAC-E Nº 94 da ANAC especifica a necessidade de manter uma distância horizontal mínima de 30 metros de pessoas não envolvidas ou não anuentes.",
+        "Embora distâncias maiores sejam recomendadas em certas situações, a regra mínima estabelecida pela ANAC é de 30 metros.",
+        "Existe sim uma regra clara da ANAC para proteger pessoas em solo."
+      ]
+    },
+    {
+      question: "Voar com um drone profissional sem a devida autorização do SARPAS dentro da Zona de Aproximação (ZAD) de um aeroporto pode resultar em qual tipo de penalidade principal, além de multas e apreensão?",
+      options: [
+        "Apenas uma advertência administrativa da ANAC",
+        "Suspensão temporária do cadastro SISANT",
+        "Processo Criminal (Código Penal Art. 132 e/ou 261)",
+        "Obrigação de refazer um curso de pilotagem"
+      ],
+      correctAnswer: 2, // Processo Criminal
+      rationales: [
+        "Infrações relacionadas ao espaço aéreo controlado pelo DECEA são consideradas mais graves que apenas questões administrativas da ANAC.",
+        "Embora possa ocorrer, a consequência mais grave por colocar o tráfego aéreo em risco é de outra natureza.",
+        "Voar irregularmente em áreas controladas pelo DECEA, colocando aeronaves tripuladas em risco, é considerado crime contra a segurança do transporte aéreo.",
+        "Embora recomendável, a principal sanção legal para essa infração específica é mais severa."
+      ]
+    },
+    {
+      question: "Um drone de 200g voando a 50 metros de altura (aprox. 165 pés) para fins RECREATIVOS, fora de qualquer FRZ (Zona de Restrição de Voo) e fora de EAC, precisa de solicitação no SARPAS?",
+      options: [
+        "Sim, sempre precisa para voos recreativos",
+        "Sim, porque está voando acima de 30 metros",
+        "Não, porque o PMD é menor ou igual a 250g e está abaixo de 200 pés fora de FRZ",
+        "Não, porque é voo recreativo"
+      ],
+      correctAnswer: 2, // Não, (Regra <250g/<200ft/fora FRZ)
+      rationales: [
+        "Existe uma exceção importante para drones leves em voos recreativos sob certas condições.",
+        "A altura isolada não é o único fator determinante para a dispensa do SARPAS.",
+        "Tanto a ICA 100-40 quanto a MCA 56-2 dispensam a solicitação SARPAS para drones com PMD até 250g, voando até 200 pés AGL e fora de FRZ.",
+        "Voos recreativos com drones acima de 250g ainda precisam de SARPAS se estiverem fora de EAC."
+      ]
+    },
+    {
+      question: "Qual documento, emitido pelo órgão ATS local ou operador do aeródromo/heliponto, é frequentemente necessário anexar à solicitação SARPAS para voos profissionais DENTRO de uma FRZ?",
+      options: [
+        "Certificado de Homologação ANATEL",
+        "Apólice do Seguro RETA",
+        "Termo de Coordenação",
+        "Certificado de Registro SISANT"
+      ],
+      correctAnswer: 2, // Termo de Coordenação
+      rationales: [
+        "A homologação é importante, mas não é o documento específico para coordenar um voo dentro da FRZ.",
+        "O seguro RETA é obrigatório, mas o documento de coordenação com o controle de tráfego local é outro.",
+        "Este termo formaliza o acordo operacional entre o piloto do drone e o responsável pelo espaço aéreo local (Torre, Controle, Operador do Aeródromo) para garantir a segurança dentro da FRZ.",
+        "O registro ANAC é necessário para a aeronave, mas não serve como autorização de coordenação para voo em FRZ."
+      ]
+    },
+    {
+      question: "O que a ANATEL fiscaliza primariamente em relação a um drone?",
+      options: [
+        "O peso máximo de decolagem (PMD) da aeronave.",
+        "A emissão de radiofrequência do drone e do controle remoto.",
+        "As áreas permitidas para voo (FRZ, ZAD, ZEA).",
+        "A contratação do Seguro RETA."
+      ],
+      correctAnswer: 1, // Radiofrequência
+      rationales: [
+        "O PMD é uma métrica primária da ANAC para classificar a aeronave.",
+        "A ANATEL gerencia o espectro eletromagnético, garantindo que os equipamentos não causem interferência.",
+        "As áreas de voo (FRZ, etc.) são de responsabilidade do DECEA.",
+        "O Seguro RETA é uma exigência da ANAC para voos profissionais."
+      ]
+    },
+    {
+      question: "Um drone com PMD de 30kg, usado para pulverização agrícola, se enquadra em qual Classe da ANAC?",
+      options: [
+        "Classe 3 (até 25 kg)",
+        "Classe 2 (> 25 kg até 150 kg)",
+        "Classe 1 (> 150 kg)",
+        "Classe Aeroagrícola (exclusiva)"
+      ],
+      correctAnswer: 1, // Classe 2
+      rationales: [
+        "Esta classe é para drones com PMD de até 25 kg.",
+        "Como 30kg está entre 25kg e 150kg, este drone se enquadra na Classe 2 da ANAC.",
+        "Esta classe é para aeronaves muito grandes, acima de 150 kg.",
+        "Embora seja um voo aeroagrícola, a classificação da ANAC ainda se baseia primariamente no peso (PMD)."
+      ]
+    },
+    {
+      question: "Um voo realizado DENTRO de um ginásio de esportes fechado para filmar um evento é considerado 'Operação em Área Confinada' e precisa de autorização do SARPAS?",
+      options: [
+        "Sim, todo voo profissional precisa de SARPAS.",
+        "Não, pois não é considerado espaço aéreo DECEA e não requer SARPAS.",
+        "Sim, mas apenas se o ginásio estiver dentro de uma FRZ.",
+        "Não, mas precisa de autorização da ANAC no SISANT."
+      ],
+      correctAnswer: 1, // Não
+      rationales: [
+        "Existe uma exceção específica na ICA 100-40 para áreas internas.",
+        "A ICA 100-40 define voos na 'fachada interna de prédios' como 'Operação em Área Confinada', que não é espaço aéreo gerenciado pelo DECEA.",
+        "O fato de estar dentro de uma FRZ é irrelevante se o voo é interno (confinado), pois ele não acessa o espaço aéreo controlado.",
+        "O SISANT é para registro da aeronave, não para autorização de voo. A autorização SARPAS (DECEA) não é necessária para voo confinado."
+      ]
+    },
+    {
+      question: "Qual é a definição correta de 'Operação no Entorno de Estrutura' segundo a ICA 100-40?",
+      options: [
+        "Voo a 30 metros de altura e 5 metros de distância horizontal da estrutura.",
+        "Voo limitado a 5 metros acima da estrutura e 30 metros horizontalmente dela.",
+        "Voo a menos de 500 metros de uma Área de Segurança.",
+        "Qualquer voo realizado abaixo de 30 metros de altura."
+      ],
+      correctAnswer: 1, // 5m acima, 30m horizontal
+      rationales: [
+        "Os valores de altura e distância estão invertidos.",
+        "Esta é a definição precisa da ICA 100-40, que permite regras de distância de aeroportos um pouco mais brandas.",
+        "Isso se refere a regras de Áreas de Segurança, não à 'Operação no Entorno de Estrutura'.",
+        "Esta não é a definição; a operação deve estar vinculada a uma estrutura específica."
+      ]
+    },
+    {
+      question: "Quais são os limites de velocidade MÁXIMA e distância horizontal MÁXIMA para um voo RECREATIVO (MCA 56-2) realizado FORA de um EAC?",
+      options: [
+        "60 km/h e 500 metros de distância.",
+        "Sem limite de velocidade e 200 metros de distância.",
+        "40 km/h e 200 metros de distância (do piloto).",
+        "40 km/h e limite visual (VLOS) de distância."
+      ],
+      correctAnswer: 2, // 40 km/h e 200m
+      rationales: [
+        "Os limites estabelecidos pela MCA 56-2 para voo recreativo fora de EAC são mais restritivos.",
+        "A falta de limite de velocidade aplica-se *dentro* de um EAC, não fora dele.",
+        "A MCA 56-2 (item 6.3) impõe um limite de velocidade de 40 km/h e uma distância horizontal máxima de 200m para voos recreativos fora de áreas designadas.",
+        "O limite de distância horizontal é fixado em 200m para voos recreativos fora de EAC, diferentemente do VLOS profissional."
+      ]
+    },
+    {
+      question: "Um voo profissional para topografia (Aerolevantamento), além da autorização SARPAS (com 4 dias de antecedência), exige um documento específico de qual outro órgão?",
+      options: [
+        "Autorização da prefeitura local.",
+        "Homologação especial da ANATEL.",
+        "Portaria de Inscrição no Ministério da Defesa (MD).",
+        "Certificado de Voo BVLOS da ANAC."
+      ],
+      correctAnswer: 2, // Ministério da Defesa (MD)
+      rationales: [
+        "Embora leis municipais devam ser observadas, a regulação de aerolevantamento é federal e exige um documento de outro órgão.",
+        "A homologação padrão da ANATEL é necessária para o equipamento, mas não é o documento extra exigido para a operação de aerolevantamento.",
+        "A ICA 100-40 (item 6.2.9) especifica que operações de aerolevantamento devem anexar a documentação exigida pelo Ministério da Defesa no SARPAS.",
+        "Embora um voo de topografia possa ser BVLOS (exigindo autorizações complexas da ANAC), a exigência documental básica mencionada na ICA 100-40 é do MD."
+      ]
+    },
+    {
+      question: "Qual a distância mínima que um drone deve manter de uma 'Área de Segurança' (como um presídio, refinaria ou instalação militar), segundo a ICA 100-40?",
+      options: [
+        "30 metros, se tiver autorização do responsável.",
+        "120 metros (400 pés) na vertical.",
+        "500 metros, além da necessidade de autorização expressa.",
+        "2 quilômetros, a mesma regra de aeroportos."
+      ],
+      correctAnswer: 2, // 500 metros
+      rationales: [
+        "A regra dos 30 metros é da ANAC para pessoas não anuentes, não do DECEA para Áreas de Segurança.",
+        "A restrição para Áreas de Segurança é primariamente horizontal.",
+        "A ICA 100-40 (e a apostila) menciona a necessidade de autorização expressa e uma distância mínima de 500 metros dessas áreas críticas.",
+        "As distâncias de aeroportos (FRZ) são variáveis e complexas (ex: 1740m, 3550m, etc.), não sendo uma regra fixa de 2km ou 500m."
+      ]
+    },
+    {
+      question: "Um piloto está praticando aeromodelismo (voo recreativo) DENTRO de um EAC (Espaço Aéreo Condicionado) publicado para essa finalidade. Ele pode usar óculos FPV?",
+      options: [
+        "Sim, e não precisa de um observador auxiliar.",
+        "Sim, mas SOMENTE se tiver um observador auxiliar ao seu lado.",
+        "Não, o uso de FPV é considerado BVLOS e é proibido em voo recreativo.",
+        "Não, pois voos em EAC são limitados a VLOS (olho nu)."
+      ],
+      correctAnswer: 0, // Sim, sem observador
+      rationales: [
+        "A MCA 56-2 (item 6.2.1) relaxa as regras dentro de um EAC, permitindo FPV sem a necessidade de um observador.",
+        "A exigência do observador para FPV no voo recreativo aplica-se FORA de um EAC.",
+        "O FPV é permitido no voo recreativo, mas suas regras mudam dependendo se está dentro ou fora de um EAC.",
+        "Voos em EAC para aeromodelismo têm regras próprias e mais permissivas, incluindo o uso de FPV."
+      ]
+    },
+    {
+      question: "Ao planejar um voo em um parque urbano, além das regras da ANAC e DECEA, o que mais o piloto deve verificar?",
+      options: [
+        "Apenas as condições meteorológicas.",
+        "Se a ANATEL permite aquela frequência no local.",
+        "A Lei Orgânica ou regulamento do Município sobre o parque.",
+        "Se o parque possui um heliponto registrado."
+      ],
+      correctAnswer: 2, // Lei do Município
+      rationales: [
+        "A meteorologia é vital, mas não é a única verificação extra necessária em locais específicos como parques.",
+        "A homologação da ANATEL já cobre o uso da frequência no território nacional; não é uma verificação por local.",
+        "Como visto no exemplo de São Paulo, o município pode ter regras próprias que proíbem ou restringem o voo de drones em parques públicos.",
+        "Verificar helipontos (FRZ) faz parte da análise DECEA padrão, mas a regulamentação do próprio parque é uma verificação municipal adicional."
+      ]
+    },
+    {
+      question: "Qual a principal diferença entre as penalidades aplicadas pela ANAC e pela ANATEL, em comparação com as penalidades do DECEA?",
+      options: [
+        "ANAC/ANATEL aplicam multas, enquanto o DECEA aplica apenas advertências.",
+        "ANAC/ANATEL focam em multas e apreensão (administrativo), enquanto o DECEA pode levar a Processo CRIMINAL.",
+        "DECEA aplica multas maiores que a ANAC/ANATEL.",
+        "Não há diferença, todos os três órgãos podem iniciar um processo criminal."
+      ],
+      correctAnswer: 1, // Administrativo vs. Criminal
+      rationales: [
+        "A penalidade do DECEA é, na verdade, a mais severa.",
+        "Infrações contra o espaço aéreo (DECEA) são tratadas como crime (Código Penal), enquanto infrações ANAC/ANATEL são geralmente administrativas (multas).",
+        "A distinção principal não é o valor da multa, mas a natureza da penalidade (administrativa vs. criminal).",
+        "Apenas as infrações contra a segurança do espaço aéreo (DECEA) são tipificadas diretamente como crime (Art. 132/261 do Cód. Penal)."
+      ]
+    }
+  ];
+
+  // --- Lógica do Quiz ---
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const quizContainer = document.getElementById('quizContainer');
+    const quizForm = document.getElementById('quizForm');
+    const formError = document.getElementById('formError');
+    const submitButton = document.getElementById('submitButton');
+    
+    const resultsContainer = document.getElementById('resultsContainer');
+    const scoreText = document.getElementById('scoreText');
+    const passFailText = document.getElementById('passFailText');
+    
+    const certificateContainer = document.getElementById('certificateContainer');
+    const certStudentName = document.getElementById('certStudentName');
+    const certScore = document.getElementById('certScore');
+    const certDate = document.getElementById('certDate');
+
+    // 1. Renderizar as Perguntas
+    function renderQuiz() {
+      let quizHTML = '';
+      quizData.forEach((item, index) => {
+        
+        let optionsHTML = '';
+        item.options.forEach((option, i) => {
+          optionsHTML += `
+            <label class="quiz-option">
+              <input type="radio" name="question${index}" value="${i}">
+              <span>${option}</span>
+            </label>
+          `;
+        });
+
+        quizHTML += `
+          <div class="question-card bg-slate-700/50 p-5 rounded-lg border border-slate-700">
+            <h3 class="font-semibold text-white">
+              <span class="text-yellow-400">Questão ${index + 1}:</span> ${item.question}
+            </h3>
+            <div class="mt-4 space-y-2" id="q${index}_options">
+              ${optionsHTML}
+            </div>
+            <!-- Explicação (escondida) -->
+            <div class="rationale" id="r${index}"></div>
+          </div>
+        `;
+      });
+      quizContainer.innerHTML = quizHTML;
+    }
+
+    // 2. Lidar com o Envio da Prova
+    quizForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Impedir envio real do formulário
+      
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+
+      // Validação simples
+      if (!firstName || !lastName || !email) {
+        formError.textContent = 'Por favor, preencha seu Nome, Sobrenome e Email para continuar.';
+        formError.classList.remove('hidden');
+        document.getElementById('userInfo').scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      formError.classList.add('hidden');
+
+      let score = 0;
+      const totalQuestions = quizData.length;
+      
+      // Loop para corrigir e dar feedback
+      quizData.forEach((item, index) => {
+        const questionCard = quizContainer.children[index];
+        const selectedInput = questionCard.querySelector(`input[name="question${index}"]:checked`);
+        const allOptionLabels = questionCard.querySelectorAll('.quiz-option');
+        const rationaleEl = questionCard.querySelector(`#r${index}`);
+        
+        const correctOptionEl = allOptionLabels[item.correctAnswer];
+
+        // Desabilitar todas as opções
+        questionCard.querySelectorAll('input[type="radio"]').forEach(input => {
+          input.disabled = true;
+        });
+        
+        // Mostrar a resposta correta
+        correctOptionEl.classList.add('correct');
+        correctOptionEl.innerHTML += ' (Correta)';
+
+        if (selectedInput) {
+          const selectedAnswer = parseInt(selectedInput.value);
+          const selectedOptionEl = allOptionLabels[selectedAnswer];
+
+          if (selectedAnswer === item.correctAnswer) {
+            // Acertou
+            score++;
+            rationaleEl.textContent = `Correto! ${item.rationales[item.correctAnswer]}`;
+            rationaleEl.style.borderColor = '#22c55e'; // green-500
+          } else {
+            // Errou
+            selectedOptionEl.classList.add('incorrect');
+            rationaleEl.textContent = `Incorreto. A resposta selecionada: ${item.rationales[selectedAnswer]}`;
+            rationaleEl.style.borderColor = '#ef4444'; // red-500
+          }
+        } else {
+          // Não respondeu
+          rationaleEl.textContent = `Você não respondeu esta questão. ${item.rationales[item.correctAnswer]}`;
+          rationaleEl.style.borderColor = '#f97316'; // orange-500
+        }
+        
+        rationaleEl.style.display = 'block';
+      });
+
+      // 3. Mostrar Resultados
+      const percentage = (score / totalQuestions) * 100;
+      const media = (score / totalQuestions) * 10;
+      
+      resultsContainer.classList.remove('hidden');
+      scoreText.textContent = `Você acertou ${score} de ${totalQuestions} (${percentage.toFixed(0)}%)`;
+      
+      // Média maior que 7.0 (ou seja, 7.5 ou mais, que é 15/20)
+      const passScore = 15; // 15/20 = 7.5 (maior que 7.0)
+      
+      if (score >= passScore) {
+        passFailText.textContent = `APROVADO! Sua média foi ${media.toFixed(1)}.`;
+        passFailText.className = 'text-center text-xl mt-2 font-semibold text-green-400';
+        
+        // 4. Gerar Certificado
+        generateCertificate(firstName, lastName, media);
+        
+      } else {
+        passFailText.textContent = `REPROVADO. Sua média foi ${media.toFixed(1)}.`;
+        passFailText.className = 'text-center text-xl mt-2 font-semibold text-red-400';
+        certificateContainer.classList.add('hidden'); // Garantir que está escondido
+      }
+
+      // Desabilitar botão e rolar para resultados
+      submitButton.disabled = true;
+      submitButton.textContent = 'Prova Corrigida';
+      submitButton.classList.remove('bg-yellow-500', 'hover:bg-yellow-400');
+      submitButton.classList.add('bg-slate-600', 'cursor-not-allowed');
+      
+      resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    
+    // 5. Função para Gerar Certificado
+    function generateCertificate(firstName, lastName, media) {
+      certStudentName.textContent = `${firstName} ${lastName}`;
+      certScore.textContent = media.toFixed(1);
+      certDate.textContent = new Date().toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+      });
+      
+      certificateContainer.classList.remove('hidden');
+    }
+
+    // Iniciar o quiz ao carregar a página
+    renderQuiz();
+  });
+</script>
+
+</body>
+</html>
