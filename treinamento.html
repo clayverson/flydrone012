@@ -130,15 +130,16 @@
           <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl text-center transition-all duration-300 hover:shadow-lg hover:border-yellow-500 flex flex-col">
             <img src="https://placehold.co/100x100/1e293b/94a3b8?text=ANAC" class="mx-auto rounded-full mb-4" alt="[Logo da ANAC]">
             <h3 class="mt-4 text-2xl font-bold text-white">2. ANAC</h3>
-            <p class="mt-2 text-slate-300 text-left space-y-2 flex-grow">
-              <strong class="text-white">Função:</strong> Fiscaliza a SEGURANÇA DA AVIAÇÃO CIVIL.
-              <br>
-              <strong class="text-white">O Quê:</strong> Regras de operação, registro, classes, seguro. (RBAC-E Nº 94).
-              <br>
-              <strong class="text-white">Por Quê:</strong> Protege pessoas e propriedades no solo.
-              <br>
-              <strong class="text-white">Como:</strong> Registro no SISANT (drones > 250g), Seguro RETA (uso profissional), <strong class="text-yellow-300">regras de distância</strong> (30m de pessoas/locais não anuentes, público ou privado), Classes por Peso (PMD).
-              <br>
+            <div class="mt-2 text-slate-300 text-left space-y-2 flex-grow">
+              <p>
+                <strong class="text-white">Função:</strong> Fiscaliza a SEGURANÇA DA AVIAÇÃO CIVIL.
+                <br>
+                <strong class="text-white">O Quê:</strong> Regras de operação, registro, classes, seguro. (RBAC-E Nº 94).
+                <br>
+                <strong class="text-white">Por Quê:</strong> Protege pessoas e propriedades no solo.
+                <br>
+                <strong class="text-white">Como:</strong> Registro no SISANT (drones > 250g), Seguro RETA (uso profissional), <strong class="text-yellow-300">regras de distância</strong> (30m de pessoas/locais não anuentes, público ou privado), Classes por Peso (PMD).
+              </p>
                
               <strong class="text-yellow-300 block mt-2">Classes ANAC (RBAC-E 94):</strong>
               <ul class="list-disc list-inside ml-4 text-sm text-slate-400">
@@ -147,35 +148,48 @@
                 <li><strong class="text-white">Classe 1:</strong> PMD > 150 kg. (Nível de aviação tripulada)</li>
               </ul>
               
-              <strong class="text-yellow-300 block mt-2">Seguro RETA:</strong>
-              <p class="text-sm text-slate-400">
-                Obrigatório para <strong class="text-white">TODOS os voos NÃO RECREATIVOS (ICA 100-40)</strong>, independentemente do peso. Cobre danos a terceiros no solo. Dispensado para voos recreativos (MCA 56-2). Deve estar válido.
-              </p>
+              <!-- ===== BLOCO RETA MODIFICADO ===== -->
+              <strong class="text-yellow-300 block mt-2">Seguro RETA (Responsabilidade Civil do Explorador ou Transportador Aéreo):</strong>
+              <div class="text-sm text-slate-400 space-y-2">
+                <p>
+                  Obrigatório para <strong class="text-white">TODOS os voos NÃO RECREATIVOS (ICA 100-40)</strong>, independentemente do peso. Dispensado para voos puramente recreativos (MCA 56-2).
+                </p>
+                <ul class="list-disc list-inside ml-4 text-left">
+                  <li><strong class="text-white">Para que serve:</strong> É um seguro de responsabilidade civil que cobre <strong class="text-white">danos corporais ou materiais causados a terceiros</strong> no solo (pessoas e propriedades) em decorrência de um acidente com o drone.</li>
+                  <li><strong class="text-white">Quando usar:</strong> Deve estar <strong class="text-white">válido e ativo</strong> em toda e qualquer operação profissional, comercial, corporativa ou de pesquisa.</li>
+                  <li><strong class="text-white">Como adquirir:</strong> Pode ser contratado através de <strong class="text-white">corretoras de seguro</strong> especializadas. Existem apólices anuais ou por períodos mais curtos (dias/meses).</li>
+                  <li><strong class="text-white">Quando pode ser acionado:</strong> Em caso de acidente onde o drone cause prejuízo (físico ou material) a uma pessoa ou propriedade que não seja o próprio piloto ou seu equipamento.</li>
+                </ul>
+                <p class="mt-2">O porte da apólice (ou certificado) é recomendado durante a operação.</p>
+              </div>
+              <!-- ===== FIM DO BLOCO RETA MODIFICADO ===== -->
               
-              {/* NOVO BLOCO LEIS MUNICIPAIS */}
+              
               <strong class="text-yellow-300 block mt-2">Leis Municipais:</strong>
               <p class="text-sm text-slate-400">
                 Observe a <strong class="text-white">Lei Orgânica do Município</strong> para operar RPAs em parques. Exemplo: Em São Paulo, não é permitido operar RPAs de dentro dos parques sem autorização prévia.
               </p>
               
               <strong class="text-white block mt-2">Risco:</strong> Multas administrativas (R$ 2.000 a R$ 50.000).
-            </p>
+            </div>
           </div>
 
           <div class="bg-yellow-800/30 border border-yellow-500 rounded-xl p-6 shadow-2xl text-center flex flex-col">
             <img src="https://placehold.co/100x100/1e293b/94a3b8?text=DECEA" class="mx-auto rounded-full mb-4" alt="[Logo do DECEA]">
             <h3 class="mt-4 text-2xl font-bold text-white">3. DECEA (Nosso Foco)</h3>
-            <p class="mt-2 text-slate-200 text-left space-y-2 flex-grow">
-              <strong class="text-white">Função:</strong> Fiscaliza o TRÁFEGO AÉREO.
-              <br>
-              <strong class="text-white">O Quê:</strong> Acesso e uso do Espaço Aéreo. (ICA 100-40 / MCA 56-2).
-              <br>
-              <strong class="text-white">Por Quê:</strong> Protege aeronaves tripuladas (aviões, helicópteros).
-              <br>
-              <strong class="text-white">Como:</strong> Define ONDE, QUANDO e COMO voar (alturas, distâncias, velocidades). Exige autorização via SARPAS para a maioria dos voos.
-              <br>
-              <strong class="text-white">Risco:</strong> Responsabilidade CRIMINAL (Art. 132/261 Cód. Penal).
-            </p>
+            <div class="mt-2 text-slate-200 text-left space-y-2 flex-grow">
+              <p>
+                <strong class="text-white">Função:</strong> Fiscaliza o TRÁFEGO AÉREO.
+                <br>
+                <strong class="text-white">O Quê:</strong> Acesso e uso do Espaço Aéreo. (ICA 100-40 / MCA 56-2).
+                <br>
+                <strong class="text-white">Por Quê:</strong> Protege aeronaves tripuladas (aviões, helicópteros).
+                <br>
+                <strong class="text-white">Como:</strong> Define ONDE, QUANDO e COMO voar (alturas, distâncias, velocidades). Exige autorização via SARPAS para a maioria dos voos.
+                <br>
+                <strong class="text-white">Risco:</strong> Responsabilidade CRIMINAL (Art. 132/261 Cód. Penal).
+              </p>
+            </div>
           </div>
 
         </div>
@@ -788,7 +802,7 @@
           
           <!-- Imagem 3 -->
           <div class="bg-slate-800 p-4 rounded-xl shadow-lg border border-slate-700">
-            <img src="https://ajuda.decea.mil.br/app/uploads/2023/05/nfz_how_to.gif" alt="[Mapa de áreas no SARPAS]" class="rounded-lg object-cover w-full" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Mapa+SARPAS'">
+            <img src="httpsa://ajuda.decea.mil.br/app/uploads/2023/05/nfz_how_to.gif" alt="[Mapa de áreas no SARPAS]" class="rounded-lg object-cover w-full" onerror="this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Mapa+SARPAS'">
             <h3 class="mt-4 text-xl font-bold text-white">Ilustração: Entendendo o Mapa SARPAS</h3>
             <p class="text-slate-300 mt-1">O que significam as áreas vermelhas (ATZ), amarelas (CTR) e verdes.</p>
           </div>
@@ -856,7 +870,7 @@
             <p class="text-slate-300 mb-4">Para homologar equipamentos e consultar processos.</p> 
             <a href="https://sistemas.anatel.gov.br/sch" target="_blank" class="block mb-2 px-6 py-2 bg-yellow-600 text-white font-medium rounded-lg hover:bg-yellow-700 transition-colors">Acessar SCH</a>
             <a href="https://wclinformatica.com/drone/selos/?pg=anatel" target="_blank" class="block mb-2 px-6 py-2 bg-yellow-600 text-white font-medium rounded-lg hover:bg-yellow-700 transition-colors">Gerar Etiqueta Anatel</a>
-            <a href="https://sei.anatel.gov.br/sei/controlador_externo.php?acao=usuario_externo_avisar_cadastro&id_orgao_acesso_externo=0" target="_blank" class="block mb-2 px-6 py-2 bg-yellow-600 text-white font-medium rounded-lg hover:bg-yellow-700 transition-colors">Cadastro SEI</a>
+            <a href="httpsa://sei.anatel.gov.br/sei/controlador_externo.php?acao=usuario_externo_avisar_cadastro&id_orgao_acesso_externo=0" target="_blank" class="block mb-2 px-6 py-2 bg-yellow-600 text-white font-medium rounded-lg hover:bg-yellow-700 transition-colors">Cadastro SEI</a>
           </div>
 
         </div>
@@ -881,7 +895,9 @@
             </li>
             <li class="flex items-center">
               <svg class="flex-shrink-0 h-6 w-6 text-white mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-              <span><strong class="text-white">SEGURO RETA (ANAC):</strong> Seu seguro é obrigatório e está válido (para uso profissional)?</span>
+
+              <!-- ===== Item RETA MODIFICADO no Checklist Final ===== -->
+              <span><strong class="text-white">SEGURO RETA (ANAC):</strong> Seu seguro é obrigatório (para voo profissional) e está válido?</span>
             </li>
             <li class="flex items-center">
               <svg class="flex-shrink-0 h-6 w-6 text-white mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
@@ -904,4 +920,3 @@
 
 </body>
 </html>
-
